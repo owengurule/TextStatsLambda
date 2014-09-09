@@ -1,0 +1,2 @@
+C:\Users\Technologist\Documents\GITHUB\TextStatsLambda\TextStatsLambda\bin\Debug\TextStatsLambda.exe.config
+C:\Users\Technologist\Documents\GITHUB\TextStatsLambda\TextStatsLambda\obj\Debug\TextStatsLambda.csprojResolveAssemblyReference.cache
