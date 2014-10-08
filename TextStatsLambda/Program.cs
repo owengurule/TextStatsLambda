@@ -13,24 +13,23 @@ namespace TextStatsLambda
         }
         static void TextStats(string input)
         {
-            //print the # of chracters, #words # vowels, # consonants, # special characters
-
-            int numChars = input.Length;
-            int numWords = input.Split(' ').ToList().Count;
-            //declare intergers to hold the # of character types
-            int numVowels = 0;
-            int numCons = 0;
-            int numSpec = 0;
-
-            
-            //looped through all letters, print output
-            Console.WriteLine(input);
-            Console.WriteLine("# Chars: " + numChars);
-            Console.WriteLine("# Words: " + numWords);
-            Console.WriteLine("# Vowels: " + numVowels);
-            Console.WriteLine("# Consonants: " + numCons);
-            Console.WriteLine("# Spec Chars: " + numSpec);
+            //standaradize my input
+            input = input.ToLower();
+            //print out the number of letters
+            Console.WriteLine("# of letters: {0}", input.Length);
+            //print out the number of words
+            Console.WriteLine("# of words: {0}", input.Split(' ').Count());
+            //print out the number of vowels
+            Console.WriteLine("# of vowels: {0}", input.Where(x => "aeiou".Contains(x.ToString())));
+            //print number of consonents
+            Console.WriteLine("# of consonants: {0}", input.Where(x => "bcdfghjklmnpqrstvwxyz".Contains(x.ToString())));
+            //print number of special characters
+            Console.WriteLine("# of special characters: {0}", input.Count(x => "?.'/".Contains(x.ToString())));
+            //print longest word
+            Console.WriteLine("Longest word: {0}", input.Split(' ').OrderBy(x => x.Length).Last());
+            //print shortest word
+            Console.WriteLine("Shortest word: {0}", input.Split(' ').OrderBy(x => x.Length).First());
         }
-        
+
         }
 }
